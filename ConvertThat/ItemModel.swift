@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Item {
+struct Item: Hashable {
     private(set) var name: String
     private(set) var density: Double
     
     init(name: String, density: Double) {
         self.name = name
-        self.density = density
+        self.density = density // In unit: g/cm^3
     }
 }
