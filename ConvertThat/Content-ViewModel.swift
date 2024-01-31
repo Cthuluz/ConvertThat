@@ -12,6 +12,8 @@ extension ContentView {
     @MainActor class ViewModel: ObservableObject {
         @Published var item = Item(name: "Water", density: 1)
         @Published var items = [Item]()
+        @Published var convDir = "Mass → Volume"
+        @Published var convDirs = ["Mass → Volume", "Volume → Mass"]
         
         init() {
             self.items.append(Item(name: "Water", density: 1))

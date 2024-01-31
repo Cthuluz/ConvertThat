@@ -20,6 +20,15 @@ struct ContentView: View {
                         }
                     }
                 }
+                
+                Section("Direction of conversion:") {
+                    Picker("Direction:", selection: $vm.convDir) {
+                        ForEach(vm.convDirs, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                }
             }
             .navigationTitle("ConvertThat")
         }
