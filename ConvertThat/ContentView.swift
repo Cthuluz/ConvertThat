@@ -31,7 +31,7 @@ struct ContentView: View {
                     }
                     
                     Picker("Unit:", selection: $vm.unitFirst) {
-                        ForEach(vm.masses + vm.weights, id: \.self) {
+                        ForEach(vm.masses + vm.weights + vm.volumes, id: \.self) {
                             Text($0)
                         }
                     }
@@ -46,7 +46,7 @@ struct ContentView: View {
                     }
                     
                     Picker("Unit:", selection: $vm.unitSecond) {
-                        ForEach(vm.volumes, id: \.self) {
+                        ForEach(vm.masses + vm.weights + vm.volumes, id: \.self) {
                             Text($0)
                         }
                     }
