@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var items = ["Flour", "Water", "Milk", "Rice"]
-    @State private var item = "Water"
+    @StateObject private var vm = ViewModel()
     
     var body: some View {
         NavigationStack {
             Form {
                 Section("Choose type:") {
-                    Picker("Item:", selection: $item) {
-                        ForEach(items, id: \.self) {
+                    Picker("Item:", selection: $vm.item) {
+                        ForEach(vm.items, id: \.self) {
                             Text($0)
                         }
                     }

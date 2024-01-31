@@ -9,4 +9,8 @@ import Foundation
 import SwiftUI
 
 extension ContentView {
+    @MainActor class ViewModel: ObservableObject {
+        @Published var item = "Water"
+        @Published var items = ["Flour", "Water", "Milk", "Rice"]
+    }
 }
