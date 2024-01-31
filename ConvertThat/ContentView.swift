@@ -21,6 +21,7 @@ struct ContentView: View {
                         }
                     }
                 }
+                .foregroundStyle(.black)
                 
                 Section("Units from") {
                     Picker("From:", selection: $vm.convFirst) {
@@ -35,6 +36,7 @@ struct ContentView: View {
                         }
                     }
                 }
+                .foregroundStyle(.black)
                 
                 Section("Units to") {
                     Picker("To:", selection: $vm.convSecond) {
@@ -49,17 +51,20 @@ struct ContentView: View {
                         }
                     }
                 }
+                .foregroundStyle(.black)
                 
                 Section("Input") {
                     TextField("Username", value: $vm.amountInput, format: .number.precision(.significantDigits(3)))
                         .keyboardType(.decimalPad)
                         .focused($amountIsFocused)
                 }
+                .foregroundStyle(.black)
                 
                 Section("Result") {
                     Text(String(format: "%.2f", vm.resultValue))
                         .bold()
                 }
+                .foregroundStyle(.black)
             }
             .navigationTitle("ConvertThat")
             .toolbar {
@@ -69,6 +74,8 @@ struct ContentView: View {
                     }
                 }
             }
+            .background(Color.teal).opacity(0.6)
+            .scrollContentBackground(.hidden)
         }
     }
 }
