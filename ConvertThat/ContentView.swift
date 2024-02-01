@@ -24,28 +24,14 @@ struct ContentView: View {
                 .foregroundStyle(.black)
                 
                 Section("Units from") {
-                    Picker("From:", selection: $vm.convFirst) {
-                        ForEach(vm.convDirs, id: \.self) {
-                            Text($0)
-                        }
-                    }
+
                     
-                    Picker("Unit:", selection: $vm.unitFirst) {
+                    Picker("Unit from:", selection: $vm.unitFirst) {
                         ForEach(vm.masses + vm.weights + vm.volumes, id: \.self) {
                             Text($0)
                         }
                     }
-                }
-                .foregroundStyle(.black)
-                
-                Section("Units to") {
-                    Picker("To:", selection: $vm.convSecond) {
-                        ForEach(vm.convDirs, id: \.self) {
-                            Text($0)
-                        }
-                    }
-                    
-                    Picker("Unit:", selection: $vm.unitSecond) {
+                    Picker("Unit to:", selection: $vm.unitSecond) {
                         ForEach(vm.masses + vm.weights + vm.volumes, id: \.self) {
                             Text($0)
                         }
@@ -65,17 +51,22 @@ struct ContentView: View {
                         .bold()
                 }
                 .foregroundStyle(.black)
+                
+                Button("Calculate") {
+                    vm.resultValue = 2.00
+                }
             }
             .navigationTitle("ConvertThat")
             .toolbar {
                 if amountIsFocused {
                     Button("Done") {
-                        amountIsFocused = false
+                        vm.calculateResult()
                     }
                 }
             }
             .background(Color.teal).opacity(0.6)
             .scrollContentBackground(.hidden)
+            .accentColor(Color(red: 0.15, green: 0.43, blue: 0.52))
         }
     }
 }

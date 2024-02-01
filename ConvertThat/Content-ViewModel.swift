@@ -14,11 +14,6 @@ extension ContentView {
         @Published var item = Item(name: "Water", density: 1)
         @Published var items = [Item]()
         
-        // Selected type and list of measurement types
-        @Published var convFirst = "Weight"
-        @Published var convSecond = "Weight"
-        @Published var convDirs = ["Weight", "Mass", "Volume"]
-        
         // Selected conversion units
         @Published var unitFirst = "mg"
         @Published var unitSecond = "oz"
@@ -36,6 +31,11 @@ extension ContentView {
             self.items.append(Item(name: "Water", density: 1))
             self.items.append(Item(name: "Wheat Flour", density: 0.593))
             self.items.append(Item(name: "Butter", density: 0.96))
+        }
+        
+        func calculateResult() {
+            
+            resultValue = 2
         }
     }
 }
