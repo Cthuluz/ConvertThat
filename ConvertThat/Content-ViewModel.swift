@@ -23,6 +23,9 @@ extension ContentView {
         @Published var weights = ["oz", "lb"]
         @Published var volumes = ["ml", "L", "fl oz", "tsp", "Tbsp", "cup", "pint", "quart", "gallon"]
         
+        // Conversion dictionary
+        let convDict = ["mg":1000, "g":1, "kg":0.001, "oz":16, "lb":1, "ml":1, "L":0.001, "fl oz":0.0338, "tsp":0.2028, "Tbsp":0.0676, "cup":0.00417, "pint":0.00211, "quart":0.00106, "gallon":0.00026]
+        
         // Input and output variables
         @Published var amountInput = 0.00
         @Published var resultValue = 0.00
@@ -34,7 +37,6 @@ extension ContentView {
         }
         
         func calculateResult() {
-            
             resultValue = 2
         }
     }

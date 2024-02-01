@@ -13,6 +13,6 @@ struct Item: Hashable {
     
     init(name: String, density: Double) {
         self.name = name
-        self.density = density // In unit: g/cm^3
+        self.density = density // In unit: g/ml
     }
 }
