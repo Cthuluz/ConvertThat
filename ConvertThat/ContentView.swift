@@ -16,7 +16,7 @@ struct ContentView: View {
             Form {
                 Section("Choose type") {
                     Picker("Item:", selection: $vm.item) {
-                        ForEach(vm.items) {
+                        ForEach(vm.items, id: \.self) {
                             Text($0.name)
                         }
                     }
@@ -47,20 +47,20 @@ struct ContentView: View {
                 .foregroundStyle(.black)
                 
                 Section("Result") {
-                    Text(String(format: "%.2f", vm.resultValue))
+                    Text(String(vm.resultValue))
                         .bold()
                 }
                 .foregroundStyle(.black)
                 
                 Button("Calculate") {
-                    vm.resultValue = 2.00
+                    vm.calculateResult()
                 }
             }
             .navigationTitle("ConvertThat")
             .toolbar {
                 if amountIsFocused {
                     Button("Done") {
-                        vm.calculateResult()
+                        amountIsFocused = false
                     }
                 }
             }

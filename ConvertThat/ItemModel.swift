@@ -7,13 +7,7 @@
 
 import Foundation
 
-struct Item: Hashable, Identifiable {
-    var id = UUID()
+struct Item: Hashable {
     private(set) var name: String
-    private(set) var density: Double
-    
-    init(name: String, density: Double) {
-        self.name = name
-        self.density = density // In unit: g/ml
-    }
+    private(set) var density: Double // In unit: g/ml
 }

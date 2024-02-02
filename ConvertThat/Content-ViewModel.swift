@@ -34,6 +34,8 @@ extension ContentView {
             self.items.append(Item(name: "Water", density: 1))
             self.items.append(Item(name: "Wheat Flour", density: 0.593))
             self.items.append(Item(name: "Butter", density: 0.96))
+            
+            item = items[0]
         }
         
         func calculateResult() {
