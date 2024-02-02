@@ -37,7 +37,36 @@ extension ContentView {
         }
         
         func calculateResult() {
-            resultValue = 2
+            var modifyValue = 0.00
+            
+            if masses.contains(unitFirst) {
+                if masses.contains(unitSecond) {
+                    modifyValue = convDict[unitSecond]!/convDict[unitFirst]!
+                    resultValue = modifyValue * amountInput
+                } else if weights.contains(unitSecond) {
+                    resultValue = 2
+                } else { // unitSecond is volume
+                    resultValue = 2
+                }
+            } else if weights.contains(unitFirst) {
+                if masses.contains(unitSecond) {
+                    resultValue = 2
+                } else if weights.contains(unitSecond) {
+                    modifyValue = convDict[unitSecond]!/convDict[unitFirst]!
+                    resultValue = modifyValue * amountInput
+                } else { // unitSecond is volume
+                    resultValue = 2
+                }
+            } else { // unitFirst is a volume
+                if masses.contains(unitSecond) {
+                    resultValue = 2
+                } else if weights.contains(unitSecond) {
+                    resultValue = 2
+                } else { // unitSecond is volume
+                    modifyValue = convDict[unitSecond]!/convDict[unitFirst]!
+                    resultValue = modifyValue * amountInput
+                }
+            }
         }
     }
 }
