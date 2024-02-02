@@ -16,7 +16,7 @@ struct ContentView: View {
             Form {
                 Section("Choose type") {
                     Picker("Item:", selection: $vm.item) {
-                        ForEach(vm.items, id: \.self) {
+                        ForEach(vm.items) {
                             Text($0.name)
                         }
                     }

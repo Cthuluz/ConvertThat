@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Item: Hashable {
+struct Item: Hashable, Identifiable {
+    var id = UUID()
     private(set) var name: String
     private(set) var density: Double
     
