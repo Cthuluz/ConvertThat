@@ -24,7 +24,7 @@ extension ContentView {
         @Published var volumes = ["ml", "L", "fl oz", "tsp", "Tbsp", "cup", "pint", "quart", "gallon"]
         
         // Conversion dictionary
-        let convDict = ["mg":1000, "g":1, "kg":0.001, "oz":16, "lb":1, "ml":1, "L":0.001, "fl oz":0.0338, "tsp":0.2028, "Tbsp":0.0676, "cup":0.00417, "pint":0.00211, "quart":0.00106, "gallon":0.00026]
+        let convDict = ["mg":1000, "g":1, "kg":0.001, "oz":16, "lb":1, "ml":1, "L":0.001, "fl oz":0.033814, "tsp":0.202884, "Tbsp":0.067628, "cup":0.00416667, "pint":0.00211338, "quart":0.00105669, "gallon":0.000264172]
         
         // Input and output variables
         @Published var amountInput = 0.00
